@@ -12,27 +12,19 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity{
-    private Pad p1,p2,p3,p4;
-    private Fader f1, f2, f3, f4;
+    private PadBank pb;
+    private FaderBank fb;
+    private BankButton bb;
     private Queue<MediaPlayer> mSoundQueue = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        p1 = new Pad(findViewById(R.id.button1), this, mSoundQueue);
-        f1 = new Fader(findViewById(R.id.fader1), p1);
-
-
-        p2 = new Pad(findViewById(R.id.button2), this, mSoundQueue);
-        f2 = new Fader(findViewById(R.id.fader2), p2);
-
-        p3 = new Pad(findViewById(R.id.button3), this, mSoundQueue);
-        f3 = new Fader(findViewById(R.id.fader3), p3);
-
-        p4 = new Pad(findViewById(R.id.button4), this, mSoundQueue);
-        f4 = new Fader(findViewById(R.id.fader4), p4);
+        pb = new PadBank(this, mSoundQueue);
+        fb = new FaderBank(this, pb);
+        Button b = findViewById(R.id.bankButton);
+        bb = new BankButton(b, pb, fb);
 
     }
 
