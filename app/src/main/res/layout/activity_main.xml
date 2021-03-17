@@ -1,194 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/button1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="90dip"
-                    android:minHeight="90dip" />
-
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="90dip"
-                    android:minHeight="90dip" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="90dip"
-                    android:minHeight="90dip" />
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="90dip"
-                    android:minHeight="90dip" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="90dip" />
-
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="90dip" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="90dip"
-                    android:minHeight="90dip" />
-
-                <Button
-                    android:id="@+id/button8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="90dip" />
-
-            </TableRow>
-        </TableLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" >
 
-            <TextView
-                android:id="@+id/textView"
+            <ImageButton
+                android:id="@+id/button0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temporal"
-                android:textSize="30sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:background="@drawable/pad_normal"
+                android:adjustViewBounds="true"
+                tools:layout_editor_absoluteX="113dp"
+                tools:layout_editor_absoluteY="83dp" />
 
-            <Button
-                android:id="@+id/bankButton"
+            <ImageButton
+                android:id="@+id/fader0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                android:adjustViewBounds="false"
+                android:layout_gravity="center"
+                android:background="@drawable/knob_izq"
+                tools:layout_editor_absoluteX="134dp"
+                tools:layout_editor_absoluteY="101dp" />
 
-            <TableLayout
-                android:id="@+id/tableLayout"
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/button2"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:background="@drawable/pad_normal"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="216dp" />
+
+            <ImageButton
+                android:id="@+id/fader2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                android:layout_gravity="center"
+                android:background="@drawable/knob_izq"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="244dp" />
+        </TableRow>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-                    <Button
-                        android:id="@+id/fader1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:minWidth="30dip" />
+            <ImageButton
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="false"
+                android:background="@drawable/pad_normal"
+                tools:layout_editor_absoluteX="432dp"
+                tools:layout_editor_absoluteY="28dp" />
 
-                    <Button
-                        android:id="@+id/fader2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/fader4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/knob_izq"
+                tools:layout_editor_absoluteX="466dp"
+                tools:layout_editor_absoluteY="56dp" />
 
-                    <Button
-                        android:id="@+id/fader3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+        </TableRow>
 
-                    <Button
-                        android:id="@+id/fader4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pad_normal"
+                tools:layout_editor_absoluteX="103dp"
+                tools:layout_editor_absoluteY="306dp" />
 
-                    <Button
-                        android:id="@+id/fader5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+            <ImageButton
+                android:id="@+id/fader6"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/knob_izq"
+                tools:layout_editor_absoluteX="134dp"
+                tools:layout_editor_absoluteY="324dp" />
 
-                    <Button
-                        android:id="@+id/fader6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
 
-                    <Button
-                        android:id="@+id/fader7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-                    <Button
-                        android:id="@+id/fader8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:maxHeight="45dip"
-                        android:minWidth="30dip" />
-                </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-            </TableLayout>
+            <ImageButton
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pad_normal"
+                tools:layout_editor_absoluteX="402dp"
+                tools:layout_editor_absoluteY="173dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageButton
+                android:id="@+id/fader1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/knob_izq"
+                tools:layout_editor_absoluteX="421dp"
+                tools:layout_editor_absoluteY="199dp" />
 
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pad_normal"
+                android:minWidth="90dip"
+                android:minHeight="90dip"
+                tools:layout_editor_absoluteX="217dp"
+                tools:layout_editor_absoluteY="263dp" />
+
+            <ImageButton
+                android:id="@+id/fader3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/knob_izq"
+                android:layout_gravity="center"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="280dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pad_normal"
+                android:minHeight="90dip"
+                tools:layout_editor_absoluteX="312dp"
+                tools:layout_editor_absoluteY="56dp" />
+
+            <ImageButton
+                android:id="@+id/fader5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/knob_izq"
+                tools:layout_editor_absoluteX="330dp"
+                tools:layout_editor_absoluteY="83dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageButton
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pad_normal"
+                android:minHeight="90dip"
+                tools:layout_editor_absoluteX="473dp"
+                tools:layout_editor_absoluteY="270dp" />
+
+            <ImageButton
+                android:id="@+id/fader7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/knob_izq"
+                android:maxHeight="45dip"
+                android:minWidth="30dip"
+                android:layout_gravity="center"
+                tools:layout_editor_absoluteX="492dp"
+                tools:layout_editor_absoluteY="288dp" />
+
+        </TableRow>
+    </TableLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

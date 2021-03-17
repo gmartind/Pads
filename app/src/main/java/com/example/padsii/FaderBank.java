@@ -1,27 +1,30 @@
 package com.example.padsii;
 
-public class FaderBank {
-    private Fader myFaders[];
-    private int Bank;
-    private Pad associatedPads[];
+import java.io.Serializable;
 
-    public FaderBank(MainActivity ac, PadBank pb){
+public class FaderBank implements Serializable {
+    private final Fader[] myFaders;
+    private final MainActivity ac;
+    private final PadBank associatedPadBank;
+
+    public FaderBank(MainActivity m, PadBank pb){
         myFaders = new Fader[8];
-        Pad [] aP = pb.getMyPads();
-        myFaders[0] = new Fader(ac.findViewById(R.id.fader1), aP[0]);
-        myFaders[1] = new Fader(ac.findViewById(R.id.fader2), aP[1]);
-        myFaders[2] = new Fader(ac.findViewById(R.id.fader3), aP[2]);
-        myFaders[3] = new Fader(ac.findViewById(R.id.fader4), aP[3]);
-        myFaders[4] = new Fader(ac.findViewById(R.id.fader5), aP[4]);
-        myFaders[5] = new Fader(ac.findViewById(R.id.fader6), aP[5]);
-        myFaders[6] = new Fader(ac.findViewById(R.id.fader7), aP[6]);
-        myFaders[7] = new Fader(ac.findViewById(R.id.fader8), aP[7]);       ///!!!!!!!
-    }
+        associatedPadBank = pb;
+        ac = m;
+        buildFaders();
+
+    }   //Constructor
+    public void buildFaders(){
+        Pad [] associatedPads = associatedPadBank.getMyPads();
+        for(int i = 0; i < 8; i++){
+            myFaders[i] = new Fader(ac.findViewById(ac.getResources().getIdentifier("fader" + Integer.toString(i), "id", ac.getPackageName())),associatedPads[i]);
+        }
+    } //Constructor method
 
     public void reset(){
-        for(int i = 0; i < 8; i++){
-            myFaders[i].setStatus(0);
+        for(Fader fader : myFaders){
+            fader.setStatus(0);
+            fader.changeImage(0);
         }
-    }
-
+    } //Mutator
 }
