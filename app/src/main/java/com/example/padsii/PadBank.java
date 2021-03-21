@@ -10,12 +10,12 @@ public class PadBank implements Serializable {
     public PadBank(MainActivity m){
         ac = m;
         bank = false;
-        myPads = new Pad[8];
+        myPads = new Pad[16];
         buildPads();
 
     }           //Constructor
     public void buildPads(){
-        for(int i = 0; i < 8; i++){
+        for(int i = 0; i < 16; i++){
             myPads[i] = new Pad(ac.findViewById(ac.getResources().getIdentifier("button" + Integer.toString(i), "id", ac.getPackageName())),ac);
         }
     }           //Constructor method

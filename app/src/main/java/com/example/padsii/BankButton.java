@@ -1,7 +1,6 @@
 package com.example.padsii;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class BankButton extends But{
