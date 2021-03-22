@@ -7,10 +7,10 @@ import android.widget.ImageButton;
 import java.io.Serializable;
 
 public abstract class But implements View.OnClickListener, Serializable {
-    private ImageButton b;
+    private Button b;
     private int status;
 
-    public But(ImageButton but){
+    public But(Button but){
         b = but;
         status = 0;
     }       //Constructor
@@ -19,7 +19,7 @@ public abstract class But implements View.OnClickListener, Serializable {
         this.status = s;
     } //Mutator
 
-    protected ImageButton getButton(){
+    protected Button getButton(){
         return b;
     }   //Accessor
     protected int getStatus(){

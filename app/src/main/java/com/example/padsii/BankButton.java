@@ -1,13 +1,14 @@
 package com.example.padsii;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class BankButton extends But{
     private PadBank myPadBank;
     private boolean bank;
     private FaderBank myFaderBank;
-    public BankButton(ImageButton but, PadBank as, FaderBank ap) {
+    public BankButton(Button but, PadBank as, FaderBank ap) {
         super(but);
         this.getButton().setOnClickListener(this);
         bank = false;

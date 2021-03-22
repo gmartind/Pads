@@ -24,7 +24,7 @@ public class FaderBank implements Serializable {
     public void reset(){
         for(Fader fader : myFaders){
             fader.setStatus(0);
-            fader.changeImage(0);
+            //fader.changeImage(0);
         }
     } //Mutator
 }

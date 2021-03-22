@@ -10,7 +10,7 @@ public class Pad extends But{
     private final MainActivity ac;
     private boolean bank;
 
-    public Pad(ImageButton but, MainActivity cont){
+    public Pad(Button but, MainActivity cont){
         super(but);
         this.getButton().setOnClickListener(this);
         ac = cont;
