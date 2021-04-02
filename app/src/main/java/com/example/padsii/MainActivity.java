@@ -3,6 +3,7 @@ package com.example.padsii;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 import java.io.Serializable;
@@ -14,10 +15,10 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sinknobs);
+        setContentView(R.layout.main_layout);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         initViews();
     } //Launcher !!
-
     public void initViews(){
         pb = new PadBank(this);
         //fb = new FaderBank(this, pb);
