@@ -6,7 +6,7 @@ public class PadBank implements Serializable {
     private final Pad[] myPads;
     private final MainActivity ac;
     private boolean bank;
-    static final int NBUTTONS = 32;
+    static final int NBUTTONS = 24;
     public PadBank(MainActivity m){
         ac = m;
         bank = false;
