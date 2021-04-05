@@ -6,16 +6,16 @@ public class PadBank implements Serializable {
     private final Pad[] myPads;
     private final MainActivity ac;
     private boolean bank;
-
+    static final int NBUTTONS = 32;
     public PadBank(MainActivity m){
         ac = m;
         bank = false;
-        myPads = new Pad[16];
+        myPads = new Pad[NBUTTONS];
         buildPads();
 
     }           //Constructor
     public void buildPads(){
-        for(int i = 0; i < 16; i++){
+        for(int i = 0; i < NBUTTONS; i++){
             myPads[i] = new Pad(ac.findViewById(ac.getResources().getIdentifier("button" + Integer.toString(i), "id", ac.getPackageName())),ac);
         }
     }           //Constructor method
