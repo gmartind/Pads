@@ -27,6 +27,6 @@ public class InitialActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 10000);
+        }, 1000);
     }
 }

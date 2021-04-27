@@ -21,4 +21,5 @@ public class BankButton extends But{
         myPadBank.setBank(bank);
         myFaderBank.reset();
     }
+
 }

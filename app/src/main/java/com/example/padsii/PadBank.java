@@ -7,12 +7,13 @@ public class PadBank implements Serializable {
     private final MainActivity ac;
     private boolean bank;
     static final int NBUTTONS = 24;
+    private static int INTRODUCED;
     public PadBank(MainActivity m){
         ac = m;
         bank = false;
         myPads = new Pad[NBUTTONS];
+        INTRODUCED = 0;
         buildPads();
-
     }           //Constructor
     public void buildPads(){
         for(int i = 0; i < NBUTTONS; i++){

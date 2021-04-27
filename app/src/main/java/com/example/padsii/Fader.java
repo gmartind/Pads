@@ -6,7 +6,7 @@ import android.widget.ImageButton;
 
 public class Fader  extends But{
     private final Pad associatedPad;
-    private final int drawables[] = {R.drawable.knobizq1, R.drawable.knobizq1, R.drawable.knobizq1};
+    private final int drawables[] = {R.drawable.kick, R.drawable.kick, R.drawable.kick};
     public Fader(Button fader, Pad pad){
         super(fader);
         associatedPad = pad;
@@ -19,7 +19,5 @@ public class Fader  extends But{
         associatedPad.setStatus(this.getStatus());
         //this.changeImage(this.getStatus());
     }
-    //public void changeImage(int pos){
-    //    this.getButton().setImageResource(drawables[pos]);
-    //}
+
 }

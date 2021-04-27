@@ -7,9 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="mainpalette_background">#fcf8e8</color>
-    <color name="mainpalette_main">#df7861</color>
-    <color name="mainpalette_secondary">#ecb390</color>
-    <color name="mainpalette_light">#d4e2d4</color>
+    <color name="mainpalette_background">#222831</color>
+    <color name="mainpalette_main">#393e46</color>
+    <color name="mainpalette_secondary">#f96d00</color>
+    <color name="mainpalette_light">#f2f2f2</color>
+    <color name="mainpalette_looping">#f9c700</color>
     <color name="transparent">@android:color/transparent </color>
 </resources>

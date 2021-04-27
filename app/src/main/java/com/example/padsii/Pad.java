@@ -5,23 +5,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class Pad extends But{
-    private int mySounds[][];
+public class Pad extends But implements View.OnLongClickListener{
+    private int oneShot;
+    private int loop;
     private final MainActivity ac;
+    private boolean looping;
     private boolean bank;
+    private MediaPlayer loopMp;
+    private static final int[] STATE_LOOPING = {R.attr.state_looping};
 
     public Pad(Button but, MainActivity cont){
         super(but);
         this.getButton().setOnClickListener(this);
+        this.getButton().setOnLongClickListener(this);
+        looping = false;
         ac = cont;
         bank = false;
-        mySounds = new int[2][3];
-        mySounds[0][0] = R.raw.clap1;
-        mySounds[0][1] = R.raw.cowbell1;
-        mySounds[0][2] = R.raw.hihat1;
-        mySounds[1][0] = R.raw.snare1;
-        mySounds[1][1] = R.raw.cowbell1;
-        mySounds[1][2] = R.raw.clap1;           ///!!!!!!!!!
+        oneShot = R.raw.clap1;
+        loop = R.raw.kick_loop;
+        loopMp = MediaPlayer.create(ac, this.loop);
     } //Constructor
 
     public void setBank(boolean b) {
@@ -30,7 +32,7 @@ public class Pad extends But{
 
     @Override
     public void onClick(View v) {
-        MediaPlayer mp = MediaPlayer.create(ac, this.mySounds[bank ? 1 : 0][this.getStatus()]);
+        MediaPlayer mp = MediaPlayer.create(ac, this.oneShot);
         mp.start();
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             public void onCompletion(MediaPlayer mp) {
@@ -39,5 +41,27 @@ public class Pad extends But{
                 mp = null;
             }
         });
+        if(looping){
+            loopMp.pause();
+            looping = false;
+            this.getButton().setBackgroundResource(R.drawable.but_skin);
+        }
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        if(!looping){
+            loopMp.start();
+            loopMp.setLooping(true);
+            looping = true;
+            this.getButton().setBackgroundResource(R.drawable.rounded_btn_looping);
+        }
+        else {
+            loopMp.pause();
+            looping = false;
+            this.getButton().setBackgroundResource(R.drawable.but_skin);
+        }
+
+        return true;
     }
 }
